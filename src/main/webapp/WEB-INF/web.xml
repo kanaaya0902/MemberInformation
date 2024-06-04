@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
+  <servlet>
+    <description></description>
+    <display-name>Main</display-name>
+    <servlet-name>Main</servlet-name>
+    <servlet-class>jp.co.aforce.DAO.Main</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Main</servlet-name>
+    <url-pattern>/Main</url-pattern>
+  </servlet-mapping>
+  <display-name>MemberberInformation</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>Member</display-name>
+    <servlet-name>Member</servlet-name>
+    <servlet-class>jp.co.aforce.DAO.Member</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Member</servlet-name>
+    <url-pattern>/Member</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MemberDAO</display-name>
+    <servlet-name>MemberDAO</servlet-name>
+    <servlet-class>jp.co.aforce.DAO.MemberDAO</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberDAO</servlet-name>
+    <url-pattern>/MemberDAO</url-pattern>
+  </servlet-mapping>
+</web-app>
