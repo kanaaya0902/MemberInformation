@@ -105,7 +105,7 @@
             <div class="button-group">
                 <button type="submit">登録</button>
                 <button type="reset">リセット</button>
-                <button type="button" onclick="window.location.href='${pageContext.request.contextPath}/jsp/index.jsp';">戻る</button>
+                <button type="button" onclick="window.location.href='${pageContext.request.contextPath}/views/index.jsp';">戻る</button>
             </div>
         </form>
         <!-- エラーメッセージの表示 -->

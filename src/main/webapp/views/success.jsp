@@ -13,7 +13,7 @@
     <div class="container">
         <h2>登録が成功しました</h2>
         <p>登録が完了しました。ありがとうございます。</p>
-        <button onclick="window.location.href='${pageContext.request.contextPath}/jsp/register.jsp';">戻る</button>
+        <button onclick="window.location.href='${pageContext.request.contextPath}/views/register.jsp';">戻る</button>
     </div>
 </body>
 </html>

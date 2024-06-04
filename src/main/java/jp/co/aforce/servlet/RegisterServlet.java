@@ -20,7 +20,7 @@ public class RegisterServlet extends HttpServlet {
     // GETリクエスト処理
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // register.jspへリダイレクト
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/register.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/register.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -47,7 +47,7 @@ public class RegisterServlet extends HttpServlet {
         // パスワードの長さをチェック
         if (password.length() < 8 || password.length() > 30) {
             request.setAttribute("errorMessage", "パスワードは8文字以上30文字以下で入力してください。");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/register.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/views/register.jsp");
             dispatcher.forward(request, response);
             return;
         }
@@ -55,7 +55,7 @@ public class RegisterServlet extends HttpServlet {
         // パスワードが一致しない場合のエラーチェック
         if (!password.equals(confirmPassword)) {
             request.setAttribute("errorMessage", "パスワードが一致しません。");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/register.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/views/register.jsp");
             dispatcher.forward(request, response);
             return;
         }
@@ -85,24 +85,24 @@ public class RegisterServlet extends HttpServlet {
             boolean isRegistered = memberDAO.registerMember(member);
             if (isRegistered) {
                 // 登録成功の場合、success.jspへリダイレクト
-                response.sendRedirect(request.getContextPath() + "/jsp/success.jsp");
+                response.sendRedirect(request.getContextPath() + "/views/success.jsp");
             } else {
                 // 登録失敗の場合、エラーメッセージを設定しregister.jspへフォワード
                 request.setAttribute("errorMessage", "登録に失敗しました。");
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/register.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/views/register.jsp");
                 dispatcher.forward(request, response);
             }
         } catch (SQLException e) {
             // SQL例外発生時のエラーメッセージを設定しregister.jspへフォワード
             e.printStackTrace();
             request.setAttribute("errorMessage", "データベースエラーが発生しました。");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/register.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/views/register.jsp");
             dispatcher.forward(request, response);
         } catch (Exception e) {
             // その他の例外発生時のエラーメッセージを設定しregister.jspへフォワード
             e.printStackTrace();
             request.setAttribute("errorMessage", "エラーが発生しました。");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/register.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/views/register.jsp");
             dispatcher.forward(request, response);
         }
     }

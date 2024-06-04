@@ -8,6 +8,6 @@
 </head>
 <body>
     <h1>ようこそ</h1>
-    <a href="${pageContext.request.contextPath}/jsp/register.jsp">会員登録</a>
+    <a href="${pageContext.request.contextPath}/views/register.jsp">会員登録</a>
 </body>
 </html>
